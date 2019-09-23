@@ -1,20 +1,4 @@
 {
-    "sqltools.connections": [
-        {
-            "database": "django_polls",
-            "dialect": "PostgreSQL",
-            "name": "Postgres",
-            "password": "sample_password",
-            "port": 5432,
-            "server": "localhost",
-            "username": "sample_user"
-        },
-        {
-            "askForPassword": true,
-            "database": ".\\db.sqlite3",
-            "dialect": "SQLite",
-            "name": "Sqlite"
-        }
-    ],
+    "sqltools.connections": [],
     "sqltools.useNodeRuntime": true
 }

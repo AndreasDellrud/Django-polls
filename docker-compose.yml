@@ -2,8 +2,9 @@ version: "3"
 
 services:
   db:
-    image: postgres
-    restart: always
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
 
   web:
     build: .
@@ -13,5 +14,8 @@ services:
       - .:/code
     ports:
       - "8000:8000"
-    depends_on: 
+    depends_on:
       - db
+
+volumes:
+  postgres_data:
