@@ -1,9 +1,15 @@
-FROM python
+# python
+FROM python:3.7-slim
+
+ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+
 RUN mkdir /code
 WORKDIR /code
+
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
+
 COPY . /code/
 
 # ssh
@@ -18,6 +24,6 @@ COPY sshd_config /etc/ssh/
 COPY init.sh /usr/local/bin/
 
 RUN chmod u+x /usr/local/bin/init.sh
-EXPOSE 8000 2222
-#CMD ["python", "/code/manage.py", "runserver", "0.0.0.0:8000"]
+EXPOSE 2222 8000
+
 ENTRYPOINT ["init.sh"]
