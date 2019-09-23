@@ -24,6 +24,6 @@ COPY sshd_config /etc/ssh/
 COPY init.sh /usr/local/bin/
 
 RUN chmod u+x /usr/local/bin/init.sh
-EXPOSE 2222 8000
 
+EXPOSE 2222 8000
 ENTRYPOINT ["init.sh"]
